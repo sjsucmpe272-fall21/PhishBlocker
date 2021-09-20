@@ -3,7 +3,7 @@
 ## Project Proposals
 
 ### Project 1
-#### Mobile App - Music Genre Identificaiton
+#### Music Genre Identificaiton
 
 1. Introduction to the problem statement
 
