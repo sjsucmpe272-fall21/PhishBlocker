@@ -21,7 +21,6 @@
       3. Build the back-end that 
           1. supports recieving sound recordings from the front end for model analysis.
           2. supports sending results of model analysis to the front end.
-          3. supports caching requests. if a song that was previously processed is requested again, we can just send the results without having to re-process it.
     
 4. Persona
 
