@@ -68,9 +68,12 @@
   occurence of a heart disease.
   
   3.Approach:
-    3.1 Build a machine learning model (either SVM or Neural Networks) to predict the chances of heart attack.
-    3.2 Build a front end for the app which would ask for user input 
-    3.3 The back end would involve receiving the data from the front end and predicting the chances of heart attack and sending it to the front end.
+    
+    Build a machine learning model (either SVM or Neural Networks) to predict the chances of heart attack.
+    
+    Build a front end for the app which would ask for user input
+    
+    The back end would involve receiving the data from the front end and predicting the chances of heart attack and sending it to the front end.
   
 4. Persona:
     Users who would like to know their chances of heart battack for an earlier treatment.
