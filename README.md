@@ -65,7 +65,7 @@
  1. Introdcution to the problem statement:
 
     Science has been striving for years to make human life comfortable and to protect them from disease. This project is a step in that direction. By identifying
-  heart issues earlier by a Machine learning predction model we can detect heart issue early and strat the required treatment
+  heart issues earlier using a Machine learning predction model we can quickly detect heart issues and begin treatment earlier.
   
  2. Abstratct:
     
@@ -73,13 +73,13 @@
   occurence of a heart disease.
   
  3. Approach:
-    1. Build a machine learning model (either SVM or Neural Networks) to predict the chances of heart attack.
+    1. Build a machine learning model that will predict the presence of heart disease.
     2. Build a front end for the app which would ask for user input
     3. The back end would involve receiving the data from the front end and predicting the chances of heart attack and sending it to the front end.
   
  4. Persona:
     
-    Users who would like to know their chances of heart battack for an earlier treatment.
+    Users who would like to know their chances of heart disease for an earlier treatment.
 
  5. Data Set Link:
     
