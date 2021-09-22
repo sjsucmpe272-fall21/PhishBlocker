@@ -28,7 +28,7 @@
 
 5. Dataset links
 
-    https://www.kaggle.com/andradaolteanu/gtzan-dataset-music-genre-classification
+    http://marsyas.info/downloads/datasets.html
 
 
 ### Project 2
