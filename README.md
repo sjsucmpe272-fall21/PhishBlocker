@@ -30,3 +30,27 @@
 
     https://www.kaggle.com/andradaolteanu/gtzan-dataset-music-genre-classification
 
+
+### Project 2
+#### Sentiment analysis of product reviews
+
+
+ 1. Introduction to the problem statement
+ Product reviews on the internet have made the communication between the provider and customer a closed feedback loop. Sentiment analysis of the reviews can help product managers to track how the product is performing, feedback for future planning, shifts in public perception with changes in the newer releases, etc. Though if this process is manual, this would be a waste of time and resources. Moreover, with popular products, manually doing the sentiment analysis would also be extremely inefficient.
+ 
+ 2. Abstract
+ In this project, we propose to build and deploy a machine learning sentiment analysis model that can classify the polarity of the reviews. The deployed application would allow users to submit a review for sentiment analysis. The polarity of the submitted review will be predicted by our model and displayed as a response.
+ 
+ 3. Approach
+ i. Build and train a model using the amazon reviews dataset to predict the polarity of reviews.
+ ii. Build the app (front-end) that can record sounds.
+ iii. Build the back-end that:
+     a. Supports submitting a review for analysis.
+     b. Supports sending results of sentiment analysis back to the front end.
+ 
+ 4. Persona
+ Product managers who get insights on how their product is performing based on the feedback from customers.
+ 
+ 5. Dataset links
+ http://jmcauley.ucsd.edu/data/amazon/
+
