@@ -73,7 +73,8 @@
     
     Build a front end for the app which would ask for user input
     
-    The back end would involve receiving the data from the front end and predicting the chances of heart attack and sending it to the front end.
+    The back end would involve receiving the data from the front end and predicting the 
+    chances of heart attack and sending it to the front end.
   
 4. Persona:
     Users who would like to know their chances of heart battack for an earlier treatment.
