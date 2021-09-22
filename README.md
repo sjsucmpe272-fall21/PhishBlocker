@@ -55,32 +55,26 @@
  http://jmcauley.ucsd.edu/data/amazon/
  
  
- Project 3
- 
- Predicting heart disease 
+ ### Project 3
+ #### Predicting heart disease from lifestyle choices
  
  1. Introdcution to the problem statement:
    Science has been striving for years to make human life comfortable and to protect them from disease. This project is a step in that direction. By identifying
   heart issues earlier by a Machine learning predction model we can detect heart issue early and strat the required treatment
   
-  2. Abstratct:
+ 2. Abstratct:
     In this project we propose to build and deploy a machine learning model that takes in various attributes from a user/patient and tries to predict the 
   occurence of a heart disease.
   
-  3.Approach:
-    
-    Build a machine learning model (either SVM or Neural Networks) to predict the chances of heart attack.
-    
-    Build a front end for the app which would ask for user input
-    
-    The back end would involve receiving the data from the front end and predicting the 
-    chances of heart attack and sending it to the front end.
+ 3. Approach:
+    1. Build a machine learning model (either SVM or Neural Networks) to predict the chances of heart attack.
+    2. Build a front end for the app which would ask for user input
+    3. The back end would involve receiving the data from the front end and predicting the chances of heart attack and sending it to the front end.
   
-4. Persona:
+ 4. Persona:
     Users who would like to know their chances of heart battack for an earlier treatment.
 
-
-5. Data Set Link:
+ 5. Data Set Link:
    https://ieee-dataport.org/open-access/heart-disease-dataset-comprehensive#files
     
  
