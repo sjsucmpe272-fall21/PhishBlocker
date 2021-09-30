@@ -70,16 +70,16 @@
  2. Abstratct:
     
     In this project we propose to build and deploy a machine learning model that takes in various attributes from a user/patient and tries to predict the 
-  occurence of a heart disease.
+  occurence of a heart disease. Ideally, this model will be able to be quicker and more accurate than more traditional methods of diagnoses.
   
  3. Approach:
     1. Build a machine learning model that will predict the presence of heart disease.
-    2. Build a front end for the app which would ask for user input
-    3. The back end would involve receiving the data from the front end and predicting the chances of heart attack and sending it to the front end.
+    2. Build a front end for the app which would ask for patient data.
+    3. The back end would involve receiving the data from the front end and predicting the chances of heart attack and sending it back to the front end.
   
  4. Persona:
     
-    Users who would like to know their chances of heart disease for an earlier treatment.
+    Doctors or other medical professionals that would benefit from a faster and more accurate method of detecting heart disease.
 
  5. Data Set Link:
     
