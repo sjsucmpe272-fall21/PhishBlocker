@@ -14,9 +14,9 @@ To tackle this issue and overcome limitations of the traditional solution, we ar
 
 ### Approach:
 This project involves researching and building the following:
-ML model for detection/classification
-Back end for serving requests and making inference (includes caching)
-Frontend that interacts with backend (this is a chrome extension)
+ - ML model for detection/classification
+ - Back end for serving requests and making inference (includes caching)
+ - Frontend that interacts with backend (this is a chrome extension)
 
 ### Dataset: http://www.sysnet.ucsd.edu/projects/url/#datasets
  
