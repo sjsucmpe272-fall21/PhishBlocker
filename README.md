@@ -1,6 +1,4 @@
-# Team-Project-17
-
-## Project Proposals Updated
+# PhishBlocker
 
 ### Malicious URL detector to prevent security threat
 
