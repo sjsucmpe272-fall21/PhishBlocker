@@ -16,5 +16,5 @@ This project involves researching and building the following:
  - Back end for serving requests and making inference (includes caching)
  - Frontend that interacts with backend (this is a chrome extension)
 
-### Dataset: http://www.sysnet.ucsd.edu/projects/url/#datasets
+### Dataset: https://www.unb.ca/cic/datasets/url-2016.html
  
