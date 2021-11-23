@@ -1,0 +1,1 @@
+Python Flask app to get the url's from front end , check for malicious one's using ml model and send those to fron end.
