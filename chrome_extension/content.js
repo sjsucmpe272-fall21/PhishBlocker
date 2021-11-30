@@ -1,5 +1,5 @@
 window.onload = function() {
-	alert('Hello world! I am '+ window.location.href)
+	//alert('Hello world! I am '+ window.location.href)
 	var urls = document.getElementsByTagName('a');
 	let urlList  =  [];
 	for (url in urls) {
@@ -9,7 +9,7 @@ window.onload = function() {
 
 	//console.log('Sending input:',urlList)
 
-	fetch("https://ec2-18-189-22-50.us-east-2.compute.amazonaws.com:8000/", {
+	fetch("https://ec2-3-20-236-192.us-east-2.compute.amazonaws.com:8000/", {
 		method: "POST",
 		referrer:"unsafe-url",
 		headers: {'Content-Type': 'application/json'} ,
@@ -20,8 +20,22 @@ window.onload = function() {
 			text = JSON.parse(text);
 			let urlResp = text.data;
 			for (url in urls) {
-				if(urlResp.includes(urls[url].href+""))
+				if(urlResp.includes(urls[url].href+"")) {
+					let ele = urls[url];
+					// var anchor = document.createElement("A");
+					// anchor.text = urls[url].href+"";
+					// anchor.href = getLinkFromCert(string);
+					let urltext = urls[url].href+"";
+					if(urltext.length>100) {
+						urltext = urltext.slice(0,100)+"...";
+					}
+					ele.title="This link is Malicious. Please open it at your own risk. Following is the url:\n\n"+urltext;
+
+					// Append the anchor to <li>  
+					//ele.appendChild(anchor);
 					urls[url].style.backgroundColor = "#FDFF47";
+				}
+					
 			}
 			// for (url in urlResp) {
 			// 	if(urlResp.includes(urls[url].href+"")) {
