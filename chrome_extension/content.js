@@ -9,7 +9,7 @@ window.onload = function() {
 
 	//console.log('Sending input:',urlList)
 
-	fetch("https://ec2-3-20-236-192.us-east-2.compute.amazonaws.com:8000/", {
+	fetch("https://ec2-3-18-103-250.us-east-2.compute.amazonaws.com:8000/", {
 		method: "POST",
 		referrer:"unsafe-url",
 		headers: {'Content-Type': 'application/json'} ,
@@ -19,21 +19,51 @@ window.onload = function() {
 			console.log('result is:',text);
 			text = JSON.parse(text);
 			let urlResp = text.data;
+			let hoverDiv = document.createElement("div");
+			hoverDiv.innerHTML = "<span style='color: red;'>This link is possibly malicious</span>";
+			let go = document.createElement("button");
+			go.innerHTML = "Go to Link";
+			hoverDiv.appendChild(go);
+
+			// let cancel = document.createElement("button");
+			// cancel.innerHTML = "Cancel";
+			// hoverDiv.appendChild(cancel);
+
+			//hoverDiv.innerHTML = "I warn you malicious url";
 			for (url in urls) {
 				if(urlResp.includes(urls[url].href+"")) {
 					let ele = urls[url];
-					// var anchor = document.createElement("A");
-					// anchor.text = urls[url].href+"";
-					// anchor.href = getLinkFromCert(string);
 					let urltext = urls[url].href+"";
 					if(urltext.length>100) {
 						urltext = urltext.slice(0,100)+"...";
 					}
 					ele.title="This link is Malicious. Please open it at your own risk. Following is the url:\n\n"+urltext;
+					
+					
+					ele.onclick = (e)=>{
+						e.preventDefault();
+						ele.appendChild(hoverDiv);
 
-					// Append the anchor to <li>  
-					//ele.appendChild(anchor);
+						// cancel.onclick = ()=> {
+						// 	ele.removeChild(hoverDiv);
+						// }
+						go.onclick = () => {
+							alert('You are about to be redirected to a possibly to a malicious website. Click OK to continue or exit the window.');
+							console.log(urltext);
+							window.location.replace(urltext);
+						}
+						
+						//e.preventDefault();
+						//alert('You are about to be redirected to a possibly to a malicious website. Click OK to continue or exit the window.');
+
+					}
 					urls[url].style.backgroundColor = "#FDFF47";
+					// ele.onmouseover  = () => {
+					// 	ele.appendChild(hoverDiv);
+					// }
+					// ele.onmouseout = () => {
+					// 	ele.removeChild(hoverDiv);
+					// }
 				}
 					
 			}
