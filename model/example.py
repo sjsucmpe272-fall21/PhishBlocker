@@ -11,7 +11,17 @@ def main():
 
     for url in url_example:
         features_array = extract_features(url)
-        results.append(model.predict(features_array).item())
+        probability_good_url, probability_bad_url = model.predict_proba(features_array)[0]
+        prediction, probability = 0, 0
+        
+        if probability_good_url >= probability_bad_url:
+            prediction = 0
+            probability = probability_good_url
+        else:
+            prediction = 1
+            probability = probability_bad_url
+
+        results.append((prediction, probability))
 
     print(results)
     return results
