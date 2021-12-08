@@ -14,5 +14,11 @@ sckit-learn, joblib, boto3, boto, numpy.
 11. pip install boto3   
 12. pip install boto  
 13. pip install numpy 
+14. Place the Nginx configuration file "flask_app" in /etc/nginx/sites-enabled/
+15. enter the command "sudo service nginx restart"
+16. start the redis server by the command "redis-server"
+17. Open another terminal , and from the path where athe app.py is present, start the gunicorn server by the command:
+gunicorn --certfile cert.pem --keyfile key.pem -b 0.0.0.0:8000 app:app
+
 
 
