@@ -1,6 +1,7 @@
 import flask
 from flask import Flask, request,make_response
 import ML.preprocessing
+import mongo_db.phish_blocker_mongo_db as mongo_db
 
 from flask_cors import CORS, cross_origin
 
@@ -66,9 +67,17 @@ def hello_world():  # put application's code here
         return "GREAT WORKING"
 
 
+@app.route('/db', methods=['POST'])
+@cross_origin()
+def db_hello():  # put application's code here
+    if (request.method == 'POST'):
+        s = request.get_json()
+        mongo_inst = mongo_db.PhishBlockerMongoDB()
 
+        for i in s:
+            mongo_inst.insert_url(s[i], "safe")
 
-
+        return "success"
 
 
 if __name__ == '__main__':
