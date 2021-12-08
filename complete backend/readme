@@ -1,5 +1,6 @@
 Complete backend for the application
 The steps to setup the backend.
+
 1. Launch aws ec2 instance. A number of libraries and dependencies are to be installed namely pyhton3, pyhton3-pip, nginx, gunicorn, flask, flask-cors,
 sckit-learn, joblib, boto3, boto, numpy.
 2. sudo apt-get update
