@@ -1,23 +1,24 @@
 Complete backend for the application
 The steps to setup the backend.
-1. Launch aws ec2 instance. A number of libraries and dependencies are to be installed namely pyhton3, pyhton3-pip, nginx, gunicorn, flask, flask-cors,
+
+ Launch aws ec2 instance. A number of libraries and dependencies are to be installed namely pyhton3, pyhton3-pip, nginx, gunicorn, flask, flask-cors,
 sckit-learn, joblib, boto3, boto, numpy.
-2. sudo apt-get update
-3. sudo apt-get install python3
-4. sudo apt-get install python3-pip
-5. sudo pip3 install flask
-6. sudo pip3 install -U flask-cors
-7. sudo apt-get install nginx
-8. sudo apt-get install gunicorn
-9. pip install skit-learn
-10. pip install joblib  
-11. pip install boto3   
-12. pip install boto  
-13. pip install numpy 
-14. Place the Nginx configuration file "flask_app" in /etc/nginx/sites-enabled/
-15. enter the command "sudo service nginx restart"
-16. start the redis server by the command "redis-server"
-17. Open another terminal , and from the path where athe app.py is present, start the gunicorn server by the command:
+ sudo apt-get update
+ sudo apt-get install python3
+ sudo apt-get install python3-pip
+ sudo pip3 install flask
+ sudo pip3 install -U flask-cors
+ sudo apt-get install nginx
+ sudo apt-get install gunicorn
+ pip install skit-learn
+ pip install joblib  
+ pip install boto3   
+ pip install boto  
+ pip install numpy 
+ Place the Nginx configuration file "flask_app" in /etc/nginx/sites-enabled/
+ enter the command "sudo service nginx restart"
+ start the redis server by the command "redis-server"
+ Open another terminal , and from the path where athe app.py is present, start the gunicorn server by the command:
 gunicorn --certfile cert.pem --keyfile key.pem -b 0.0.0.0:8000 app:app
 
 
