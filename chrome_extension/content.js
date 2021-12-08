@@ -9,7 +9,7 @@ window.onload = function() {
 
 	//console.log('Sending input:',urlList)
 
-	fetch("https://ec2-3-18-103-250.us-east-2.compute.amazonaws.com:8000/", {
+	fetch("https://ec2-3-136-159-116.us-east-2.compute.amazonaws.com:8000/", {
 		method: "POST",
 		referrer:"unsafe-url",
 		headers: {'Content-Type': 'application/json'} ,
@@ -25,19 +25,27 @@ window.onload = function() {
 			go.innerHTML = "Go to Link";
 			hoverDiv.appendChild(go);
 
-			// let cancel = document.createElement("button");
-			// cancel.innerHTML = "Cancel";
-			// hoverDiv.appendChild(cancel);
+			let safebutton = document.createElement("button");
+			safebutton.innerHTML = "Safe URL?";
+			hoverDiv.appendChild(safebutton);
 
 			//hoverDiv.innerHTML = "I warn you malicious url";
+			let malUrls = [];
+			let malUrlScoreMap = {};
+			for(let index in urlResp) {
+				malUrls.push(urlResp[index].url);
+				malUrlScoreMap[urlResp[index].url] = urlResp[index].prediction;
+			} 
 			for (url in urls) {
-				if(urlResp.includes(urls[url].href+"")) {
+				if(malUrls.includes(urls[url].href+"")) {
 					let ele = urls[url];
 					let urltext = urls[url].href+"";
+					let score = parseFloat(malUrlScoreMap[urltext])*100;
+					score = Number((score).toFixed(2));
 					if(urltext.length>100) {
 						urltext = urltext.slice(0,100)+"...";
 					}
-					ele.title="This link is Malicious. Please open it at your own risk. Following is the url:\n\n"+urltext;
+					ele.title="We are "+score+"% sure that this link is Malicious. Please open it at your own risk. Following is the url:\n\n"+urltext;
 					
 					
 					ele.onclick = (e)=>{
@@ -51,6 +59,19 @@ window.onload = function() {
 							alert('You are about to be redirected to a possibly to a malicious website. Click OK to continue or exit the window.');
 							console.log(urltext);
 							window.location.replace(urltext);
+						}
+
+						safebutton.onclick = () => {
+							//ele.removeChild(hoverDiv);
+							fetch("https://ec2-3-136-159-116.us-east-2.compute.amazonaws.com:8000/db", {
+								method: "POST",
+								referrer:"unsafe-url",
+								headers: {'Content-Type': 'application/json'} ,
+								body: JSON.stringify({url:urltext})
+							}).then(response => {
+								console.log(response);
+							})
+							alert("Recorded your input. Thanks for your time.");
 						}
 						
 						//e.preventDefault();
