@@ -9,7 +9,7 @@ window.onload = function() {
 
 	//console.log('Sending input:',urlList)
 
-	fetch("https://ec2-3-136-159-116.us-east-2.compute.amazonaws.com:8000/", {
+	fetch("https://ec2-18-218-107-148.us-east-2.compute.amazonaws.com:8000/", {
 		method: "POST",
 		referrer:"unsafe-url",
 		headers: {'Content-Type': 'application/json'} ,
@@ -63,7 +63,7 @@ window.onload = function() {
 
 						safebutton.onclick = () => {
 							//ele.removeChild(hoverDiv);
-							fetch("https://ec2-3-136-159-116.us-east-2.compute.amazonaws.com:8000/db", {
+							fetch("https://ec2-18-218-107-148.us-east-2.compute.amazonaws.com:8000/db", {
 								method: "POST",
 								referrer:"unsafe-url",
 								headers: {'Content-Type': 'application/json'} ,
